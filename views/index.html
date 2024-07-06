@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+    <h2 id="result"></h2>
+
+    <p>hihihihihihhi mx</p>
+
+    <script>
+        async function playGame(choice) {
+            const response = await fetch('/play', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ choice })
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = `You chose ${result.playerChoice}, computer chose ${result.computerChoice}. ${result.result}`;
+        }
+    </script>
+</body>
+</html>

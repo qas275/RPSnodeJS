@@ -1,0 +1,25 @@
+# Node modules directory
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables file
+.env
+
+# Directory for local environment overrides
+.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+*.swp
+*.swo
+*.idea/
+.project
+.classpath
